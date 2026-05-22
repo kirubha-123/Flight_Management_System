@@ -1,0 +1,22 @@
+{
+  "name": "llm-observability-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "seed": "tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sql.js": "^1.12.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^20.19.0",
+    "tsx": "^4.20.4",
+    "typescript": "^5.8.3"
+  }
+}

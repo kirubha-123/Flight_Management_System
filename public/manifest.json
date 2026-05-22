@@ -1,0 +1,17 @@
+{
+  "name": "Flight Management",
+  "short_name": "Flight",
+  "description": "Flight booking and management PWA",
+  "start_url": "/search",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

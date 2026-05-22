@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Observability Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">L</div>
+          <div>
+            <div class="eyebrow">Lightweight telemetry</div>
+            <h1>LLM Observability</h1>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Conversations</h2>
+            <button id="refreshConversations" class="ghost">Refresh</button>
+          </div>
+          <button id="newConversation" class="primary">New conversation</button>
+          <div id="conversationList" class="conversation-list"></div>
+        </section>
+
+        <section class="panel metrics">
+          <div class="metric"><span>Conversations</span><strong id="metricConversations">0</strong></div>
+          <div class="metric"><span>Logs</span><strong id="metricLogs">0</strong></div>
+          <div class="metric"><span>Avg latency</span><strong id="metricLatency">0ms</strong></div>
+          <div class="metric"><span>Errors</span><strong id="metricErrors">0</strong></div>
+          <div class="metric"><span>Total tokens</span><strong id="metricTokens">0</strong></div>
+        </section>
+      </aside>
+
+      <main class="content">
+        <header class="header">
+          <div>
+            <div id="conversationStatus" class="status-pill">No conversation selected</div>
+            <h2 id="conversationTitle">Select a conversation</h2>
+            <p id="conversationMeta">Short context, near-real-time ingestion, and simple storage.</p>
+          </div>
+          <div class="actions">
+            <button id="resumeConversation" class="ghost">Resume</button>
+            <button id="cancelConversation" class="danger">Cancel</button>
+          </div>
+        </header>
+
+        <section class="panel thread-panel">
+          <div id="thread" class="thread"></div>
+          <form id="chatForm" class="composer">
+            <textarea id="chatInput" rows="3" placeholder="Ask something about inference logging, scaling, or architecture..."></textarea>
+            <div class="composer-row">
+              <div class="hint">Multi-turn context is kept to the last few turns.</div>
+              <button id="sendButton" class="primary" type="submit">Send</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

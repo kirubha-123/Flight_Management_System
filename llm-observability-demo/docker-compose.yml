@@ -1,0 +1,12 @@
+services:
+  llm-observability-demo:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      PORT: 8787
+      APP_BASE_URL: http://localhost:8787
+      INGESTION_API_KEY: demo-ingest-key
+      LLM_PROVIDER: mock
+    volumes:
+      - ./data:/app/data
